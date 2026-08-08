@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Envoltorio para Git Bash / WSL: delega en el script de PowerShell.
+here="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+exec powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$(cygpath -w "$here/scripts/cpx.ps1" 2>/dev/null || echo "$here/scripts/cpx.ps1")" "$@"

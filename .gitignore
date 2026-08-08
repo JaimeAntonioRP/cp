@@ -67,3 +67,15 @@ vcpkg_installed/
 # test output & cache
 Testing/
 .cache/
+
+# ---------------------------------------------------------------- cpx ------
+# Binarios compilados por `cpx run/test/stress`
+bin/
+*.stackdump
+
+# IMPORTANTE: `*.out` (arriba) es la extension de los ejecutables de Unix, pero
+# tambien la que usamos para la salida esperada de los tests. Estas excepciones
+# garantizan que los casos de prueba SI se versionen.
+!**/tests/*.out
+!**/tests/*.ans
+!**/tests/*.in

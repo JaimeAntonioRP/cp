@@ -1,0 +1,105 @@
+{
+  "for loop": {
+    "scope": "cpp",
+    "prefix": "fo",
+    "body": ["for (int ${1:i} = 0; $1 < ${2:n}; ++$1) {", "\t$0", "}"],
+    "description": "for 0..n-1"
+  },
+  "for range": {
+    "scope": "cpp",
+    "prefix": "fe",
+    "body": ["for (auto& ${1:x} : ${2:v}) {", "\t$0", "}"],
+    "description": "range-for"
+  },
+  "leer vector": {
+    "scope": "cpp",
+    "prefix": "rv",
+    "body": [
+      "int ${1:n};",
+      "cin >> $1;",
+      "vector<${2:int}> ${3:a}($1);",
+      "for (auto& x : $3) cin >> x;",
+      "$0"
+    ],
+    "description": "leer n y un vector de n elementos"
+  },
+  "imprimir vector": {
+    "scope": "cpp",
+    "prefix": "pv",
+    "body": [
+      "for (int i = 0; i < sz(${1:a}); ++i) cout << $1[i] << \" \\n\"[i + 1 == sz($1)];",
+      "$0"
+    ],
+    "description": "imprimir vector separado por espacios con salto final"
+  },
+  "grafo lista adyacencia": {
+    "scope": "cpp",
+    "prefix": "graph",
+    "body": [
+      "int ${1:n}, ${2:m};",
+      "cin >> $1 >> $2;",
+      "vector<vector<int>> g($1);",
+      "for (int i = 0; i < $2; ++i) {",
+      "\tint u, v;",
+      "\tcin >> u >> v;",
+      "\t--u, --v;",
+      "\tg[u].push_back(v);",
+      "\tg[v].push_back(u);",
+      "}",
+      "$0"
+    ],
+    "description": "leer grafo no dirigido 1-indexed"
+  },
+  "busqueda binaria": {
+    "scope": "cpp",
+    "prefix": "bs",
+    "body": [
+      "auto check = [&](long long ${1:x}) -> bool {",
+      "\t$0",
+      "};",
+      "long long lo = ${2:0}, hi = ${3:1e18}, ans = -1;",
+      "while (lo <= hi) {",
+      "\tlong long mid = lo + (hi - lo) / 2;",
+      "\tif (check(mid)) ans = mid, hi = mid - 1;",
+      "\telse lo = mid + 1;",
+      "}"
+    ],
+    "description": "busqueda binaria sobre la respuesta"
+  },
+  "dfs iterativo": {
+    "scope": "cpp",
+    "prefix": "dfs",
+    "body": [
+      "vector<char> vis(n, 0);",
+      "auto dfs = [&](int src) {",
+      "\tvector<int> st{src};",
+      "\tvis[src] = 1;",
+      "\twhile (!st.empty()) {",
+      "\t\tint u = st.back();",
+      "\t\tst.pop_back();",
+      "\t\tfor (int v : g[u]) if (!vis[v]) { vis[v] = 1; st.push_back(v); }",
+      "\t}",
+      "};",
+      "$0"
+    ],
+    "description": "DFS iterativo (sin stack overflow)"
+  },
+  "comprimir coordenadas": {
+    "scope": "cpp",
+    "prefix": "comp",
+    "body": [
+      "vector<${1:int}> vals = ${2:a};",
+      "sort(all(vals));",
+      "vals.erase(unique(all(vals)), vals.end());",
+      "auto idx = [&](${1:int} x) { return (int)(lower_bound(all(vals), x) - vals.begin()); };",
+      "$0"
+    ],
+    "description": "compresion de coordenadas"
+  },
+  "modint mod": {
+    "scope": "cpp",
+    "prefix": "mod",
+    "body": ["const long long MOD = ${1|1'000'000'007,998'244'353|};", "$0"],
+    "description": "constante MOD"
+  }
+}

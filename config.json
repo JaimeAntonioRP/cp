@@ -1,0 +1,33 @@
+{
+  "compiler": "g++",
+  "std": "c++17",
+  "debugFlags": [
+    "-g",
+    "-O0",
+    "-DLOCAL",
+    "-Wall",
+    "-Wextra",
+    "-Wshadow",
+    "-Wconversion",
+    "-D_GLIBCXX_DEBUG",
+    "-D_GLIBCXX_DEBUG_PEDANTIC"
+  ],
+  "releaseFlags": [
+    "-O2",
+    "-DLOCAL"
+  ],
+  "sanitizeFlags": [
+    "-fsanitize=address,undefined",
+    "-fno-omit-frame-pointer"
+  ],
+  "sanitizeFallbackFlags": [
+    "-fsanitize=undefined",
+    "-fsanitize-trap=undefined",
+    "-fstack-protector-all",
+    "-D_GLIBCXX_ASSERTIONS"
+  ],
+  "timeoutMs": 5000,
+  "defaultJudge": "codeforces",
+  "editor": "code",
+  "author": "JaimeAntonioRP"
+}

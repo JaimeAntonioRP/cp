@@ -1,0 +1,46 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "cpx test",
+      "type": "shell",
+      "command": "${workspaceFolder}/cpx.cmd",
+      "args": ["test", "${fileDirname}"],
+      "group": { "kind": "build", "isDefault": true },
+      "presentation": { "reveal": "always", "panel": "dedicated", "clear": true },
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "cpx run",
+      "type": "shell",
+      "command": "${workspaceFolder}/cpx.cmd",
+      "args": ["run", "${fileDirname}"],
+      "presentation": { "reveal": "always", "panel": "dedicated", "clear": true },
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "cpx stress",
+      "type": "shell",
+      "command": "${workspaceFolder}/cpx.cmd",
+      "args": ["stress", "${fileDirname}"],
+      "presentation": { "reveal": "always", "panel": "dedicated", "clear": true },
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "cpx accept",
+      "type": "shell",
+      "command": "${workspaceFolder}/cpx.cmd",
+      "args": ["accept", "${fileDirname}"],
+      "presentation": { "reveal": "always", "panel": "dedicated", "clear": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "cpx tc",
+      "type": "shell",
+      "command": "${workspaceFolder}/cpx.cmd",
+      "args": ["tc", "${fileDirname}"],
+      "presentation": { "reveal": "silent", "panel": "dedicated" },
+      "problemMatcher": []
+    }
+  ]
+}
