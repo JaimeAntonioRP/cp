@@ -1,0 +1,17 @@
+# Finales de linea deterministas: sin esto, core.autocrlf en Windows convierte
+# los ficheros de test a CRLF y dejan de ser byte a byte lo que da el juez.
+* text=auto eol=lf
+
+# Datos de prueba: siempre LF, tal cual los publica el juez.
+*.in   text eol=lf
+*.out  text eol=lf
+*.ans  text eol=lf
+
+# Scripts de Windows: CRLF, que es lo que esperan cmd.exe y PowerShell.
+*.ps1  text eol=crlf
+*.cmd  text eol=crlf
+*.bat  text eol=crlf
+
+# Binarios que pudieran colarse
+*.exe  binary
+*.pdf  binary
