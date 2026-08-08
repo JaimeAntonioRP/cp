@@ -183,17 +183,19 @@ function Compare-Output {
 
     $normalize = {
         param($t)
-        if ($null -eq $t) { return @() }
-        $lines = $t -replace "`r`n", "`n" -split "`n"
-        $lines = $lines | ForEach-Object { $_.TrimEnd() }
+        if ([string]::IsNullOrEmpty($t)) { return }
+        # El @() es imprescindible: con una sola linea, PowerShell colapsa el
+        # resultado a una cadena y luego $e[0] indexaria CARACTERES en vez de
+        # lineas ("YES" -> "Y"), dando un WA fantasma en ficheros sin salto final.
+        $lines = @($t -replace "`r`n", "`n" -split "`n" | ForEach-Object { $_.TrimEnd() })
         while ($lines.Count -gt 0 -and $lines[-1] -eq '') {
-            $lines = $lines[0..($lines.Count - 2)]
+            $lines = @($lines[0..($lines.Count - 2)])
         }
-        return , $lines
+        return $lines
     }
 
-    $e = & $normalize $Expected
-    $a = & $normalize $Actual
+    $e = @(& $normalize $Expected)
+    $a = @(& $normalize $Actual)
 
     $n = [Math]::Max($e.Count, $a.Count)
     for ($i = 0; $i -lt $n; $i++) {
