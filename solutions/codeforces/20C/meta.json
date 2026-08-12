@@ -1,0 +1,10 @@
+{
+    "judge":  "codeforces",
+    "id":  "20C",
+    "name":  "Dijkstra?",
+    "url":  "https://codeforces.com/problemset/problem/20/C",
+    "tags":  [
+                 "graph"
+             ],
+    "date":  "2026-08-12"
+}
