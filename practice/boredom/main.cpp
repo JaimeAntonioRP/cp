@@ -1,0 +1,69 @@
+/**
+ *  Autor : JaimeAntonioRP
+ *  Problema:
+ *  Enlace  :
+ *  Idea    :
+ */
+#include <bits/stdc++.h>
+using namespace std;
+
+using ll  = long long;
+using ull = unsigned long long;
+using ld  = long double;
+using pii = pair<int, int>;
+using pll = pair<ll, ll>;
+template <class T> using vc  = vector<T>;
+template <class T> using vvc = vector<vector<T>>;
+template <class T> using minpq = priority_queue<T, vector<T>, greater<T>>;
+
+#define all(x)  (x).begin(), (x).end()
+#define rall(x) (x).rbegin(), (x).rend()
+#define sz(x)   ((int)(x).size())
+#define pb      push_back
+#define eb      emplace_back
+#define fi      first
+#define se      second
+
+#ifdef LOCAL
+#include "debug.hpp"
+#else
+#define dbg(...)  ((void)0)
+#define dbgr(...) ((void)0)   // sin esto, un dbgr() olvidado = CE en el juez
+#endif
+
+constexpr int INF = 1'000'000'007;
+constexpr ll  LNF = 4'000'000'000'000'000'000LL;
+
+void solve() {
+    // <<< tu solucion aqui >>>
+    int n; cin >> n; 
+    ll a[n + 1];
+    ll cnt[(int)(1e5 + 5)];
+    ll dp[(int)(1e5 + 5)];
+    ll mx = 0;
+    for(int i = 0; i <= n; i++) dp[i] = 0;
+    for(int i = 1; i <= n; i++) {
+        cin >> a[i];
+        mx = max(mx, a[i]);
+    }
+    for(int i = 1; i <= n; i++) cnt[a[i]]++;
+    dp[1] = cnt[1];
+
+    for(int i = 2; i <= mx; i++){
+        dp[i] = max(dp[i - 1], dp[i - 2] + cnt[i] * i);
+    }
+    cout << dp[mx] << "\n";
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int T = 1;
+    // cin >> T;                       // <- descomenta si hay multiples casos
+    for (int tc = 1; tc <= T; ++tc) {
+        // cout << "Case #" << tc << ": ";
+        solve();
+    }
+    return 0;
+}

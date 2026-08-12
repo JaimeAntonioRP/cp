@@ -1,0 +1,10 @@
+{
+    "judge":  "codeforces",
+    "id":  "455A",
+    "name":  "Boredom",
+    "url":  "https://codeforces.com/problemset/problem/455/A",
+    "tags":  [
+                 "dp"
+             ],
+    "date":  "2026-08-12"
+}
