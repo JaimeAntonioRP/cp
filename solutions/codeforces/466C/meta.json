@@ -1,0 +1,11 @@
+{
+    "judge":  "codeforces",
+    "id":  "466C",
+    "name":  "Two Substrings",
+    "url":  "https://codeforces.com/problemset/problem/550/A",
+    "tags":  [
+                 "strings",
+                 "implementation"
+             ],
+    "date":  "2026-08-12"
+}
