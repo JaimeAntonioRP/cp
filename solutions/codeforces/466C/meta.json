@@ -1,11 +1,10 @@
 {
     "judge":  "codeforces",
     "id":  "466C",
-    "name":  "Two Substrings",
-    "url":  "https://codeforces.com/problemset/problem/550/A",
+    "name":  "Number of Ways",
+    "url":  "https://codeforces.com/problemset/problem/466/C",
     "tags":  [
-                 "strings",
                  "implementation"
              ],
-    "date":  "2026-08-12"
+    "date":  "2026-08-14"
 }
