@@ -1,9 +1,10 @@
 # Soluciones aceptadas
 
-Total: **8** problemas.  Generado por `cpx accept` - no editar a mano.
+Total: **9** problemas.  Generado por `cpx accept` - no editar a mano.
 
 | Fecha | Juez | ID | Problema | Tags | Codigo |
 | --- | --- | --- | --- | --- | --- |
+| 2026-09-01 | codeforces | `2026-09-01-cf-round-1071-B` | B |  | [codigo](codeforces/2026-09-01-cf-round-1071-B) |
 | 2026-08-14 | codeforces | `466C` | [Number of Ways](https://codeforces.com/problemset/problem/466/C) | implementation | [codigo](codeforces/466C) |
 | 2026-08-14 | codeforces | `276C` | [Little Girl and Maximum Sum](https://codeforces.com/problemset/problem/276/C) | sortings, implementation | [codigo](codeforces/276C) |
 | 2026-08-12 | codeforces | `520B` | [Two Buttons](https://codeforces.com/problemset/problem/520/B) | math | [codigo](codeforces/520B) |
